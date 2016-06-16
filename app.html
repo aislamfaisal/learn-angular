@@ -1,0 +1,183 @@
+<html>
+<head>
+    <titl>Learn AngularJS</titl>
+    <style type="text/css">
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body ng-app="learnAngular">
+<div ng-controller="defaultCtrl">
+    <p ng-if="user.result.success==true">
+        Number of Company= {{user.result.data.meta.total_companies}}
+    </p>
+    <p ng-if="user.result.success==false">
+        Login Failed
+    </p>
+
+    <table>
+        <thead>
+            <th>SL</th>
+            <th>Company Name</th>
+            <th>Details</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="company in user.result.data.companies">
+                <td>{{company.uuid}}</td>
+                <td>{{company.name}}</td>
+                <td>View Details</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="/bower_components/angular/angular.min.js" type="text/javascript"></script>
+<script>
+    /**
+     * My Angular APP js
+     */
+
+    var app = angular.module('learnAngular', []);
+
+    app.controller("defaultCtrl", function ($scope) {
+        $scope.user = {
+            "result": {
+                "success": true,
+                "message": "User details",
+                "data": {
+                    "updatedAt": "2016-06-15T19:24:44.399Z",
+                    "created_at": "2016-06-13T13:42:10.904Z",
+                    "meta": {
+                        "total_companies": 1
+                    },
+                    "companies": [
+                        {
+                            "updatedAt": "2016-06-15T19:24:44.033Z",
+                            "created_at": "2016-06-15T19:24:44.033Z",
+                            "name": "Preview Technologies Limited",
+                            "description": "This is the description",
+                            "deleted": false,
+                            "customers": [],
+                            "invoices": [],
+                            "meta": {
+                                "total_invoice": 0,
+                                "total_customer": 0
+                            },
+                            "address": {
+                                "primary": {
+                                    "fax": "",
+                                    "phone": "+8801717530114",
+                                    "country": "Bangladesh",
+                                    "zip": 1205,
+                                    "state": "Dhaka",
+                                    "city": "Dhaka",
+                                    "street_additional": "Dhanmondi",
+                                    "street": null
+                                }
+                            },
+                            "email_address": "info@previewtechs.com",
+                            "uuid": "081d501d-377f-4391-b429-66d6eadeb438"
+                        },
+                        {
+                            "updatedAt": "2016-06-15T19:24:44.033Z",
+                            "created_at": "2016-06-15T19:24:44.033Z",
+                            "name": "Flow BD",
+                            "description": "This is the description",
+                            "deleted": false,
+                            "customers": [],
+                            "invoices": [],
+                            "meta": {
+                                "total_invoice": 0,
+                                "total_customer": 0
+                            },
+                            "address": {
+                                "primary": {
+                                    "fax": "",
+                                    "phone": "+8801717530114",
+                                    "country": "Bangladesh",
+                                    "zip": 1205,
+                                    "state": "Dhaka",
+                                    "city": "Dhaka",
+                                    "street_additional": "Dhanmondi",
+                                    "street": null
+                                }
+                            },
+                            "email_address": "info@previewtechs.com",
+                            "uuid": "081d501d-377f-4391-b429-66d6eadeb438"
+                        }
+                    ],
+                    "login_histories": [
+                        {
+                            "updatedAt": "2016-06-13T13:43:00.368Z",
+                            "created_at": "2016-06-13T13:43:00.368Z",
+                            "status": "successful",
+                            "uuid": "78a18576-ccc5-480b-9b8c-ea5451fd2630",
+                            "referral_url": null,
+                            "user_agent": {
+                                "cpu": {
+                                    "architecture": "amd64"
+                                },
+                                "device": {
+                                    "vendor": null,
+                                    "type": null,
+                                    "model": null
+                                },
+                                "os": {
+                                    "version": "x86_64",
+                                    "name": "Linux"
+                                },
+                                "engine": {
+                                    "name": "WebKit",
+                                    "version": "537.36"
+                                },
+                                "browser": {
+                                    "major": "51",
+                                    "version": "51.0.2704.84",
+                                    "name": "Chrome"
+                                },
+                                "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36"
+                            },
+                            "ip": "::ffff:127.0.0.1"
+                        }
+                    ],
+                    "security": {
+                        "questions": {
+                            "answer_2": null,
+                            "question_2": null,
+                            "answer_1": "GM",
+                            "question_1": "What is your parents name?"
+                        }
+                    },
+                    "email_verified": false,
+                    "profile": {
+                        "photo_path": {
+                            "thumbnail": "https://placeholdit.imgix.net/~text?txtsize=20&txt=Profile%20Photo&w=200&h=200",
+                            "original": "https://placeholdit.imgix.net/~text?txtsize=47&txt=Profile%20Photo&w=500&h=500"
+                        },
+                        "gender": "male",
+                        "date_of_birth": "1988-11-26T00:00:00.000Z",
+                        "last_name": "Azam",
+                        "first_name": "Shaharia",
+                        "full_name": "Shaharia Azam"
+                    },
+                    "email_address": "shaharia.azam@gmail.com",
+                    "uuid": "0c0978d9-f207-4b3d-a81d-b67e4f7c37d9"
+                }
+            }
+        };
+
+        console.log($scope.user);
+
+        $scope.afterClick = function () {
+
+        };
+    })
+
+</script>
+</body>
+</html>
